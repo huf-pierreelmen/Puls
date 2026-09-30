@@ -1,19 +1,20 @@
 # Working on Puls
 
 Read PROJECT.md and the installed design system guidance before implementation.
+Puls uses Hufvudstaden branding. Read brand/hufvudstaden/DESIGN-GUIDELINES.md before UI changes; preserve the Hufvudstaden theme import and html data-brand. Use approved brand assets only.
 Follow node_modules/@hufvudstaden/design-system/guidance/CONSUMING.md.
 Use public design system exports for UI primitives. Keep application logic and layout here.
 Run npm run check after code changes. Verify interactive changes in a browser.
 Never place Supabase secret/service_role keys in browser code or VITE_* variables.
 
 <!-- hufvudstaden-guidance:start -->
-Shared company guidance, version 0.16.0. Updated centrally; do not edit this block.
+Shared company guidance, version 0.17.1. Updated centrally; do not edit this block.
 Keep application-specific details outside this block. The shared rules here supersede older copied shared rules; explicit project exceptions still apply.
 
 
 ## Shared design-system guidance
 
-Installed guidance version: 0.16.0. Mode: package. Active brand: hufvudstaden.
+Installed guidance version: 0.17.1. Mode: package. Active brand: hufvudstaden.
 
 Read the application's own PROJECT.md first. Keep its business requirements and active brand authoritative.
 Then read:

@@ -1,7 +1,7 @@
 
 
 <!-- hufvudstaden-guidance:start -->
-Shared company guidance, version 0.16.0. Updated centrally; do not edit this block.
+Shared company guidance, version 0.17.1. Updated centrally; do not edit this block.
 Keep application-specific details outside this block. The shared rules here supersede older copied shared rules; explicit project exceptions still apply.
 
 
@@ -224,5 +224,12 @@ Innan Hufvudstaden-design skapas eller ändras:
 Hitta inte på brandfärger, typografiregler, logotyper, illustrationer, bildmanér eller visuella regler.
 
 Om något inte är dokumenterat ska det betraktas som odefinierat.
+
+## Paketerade digitala typsnitt
+
+Från version 0.17.0 distribuerar @hufvudstaden/design-system Cormorant Garamond
+med OFL-1.1-licens. Importera @hufvudstaden/design-system/fonts/hufvudstaden.css
+i applikationen. Arial används som systemtypsnitt. Detta ändrar inte manualens
+regler för typografi. Från version 0.17.1 finns den officiella svarta logotypen från Hufvudstadens webbplats i paketets export assets/hufvudstaden/logos/hufvudstaden-black.svg. Ursprungliga vektorbanor och proportioner är bevarade. Följ manualens regler för friyta och placering.
 
 <!-- hufvudstaden-guidance:end -->

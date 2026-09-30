@@ -1,7 +1,7 @@
 
 
 <!-- hufvudstaden-guidance:start -->
-Shared company guidance, version 0.16.0. Updated centrally; do not edit this block.
+Shared company guidance, version 0.17.1. Updated centrally; do not edit this block.
 Keep application-specific details outside this block. The shared rules here supersede older copied shared rules; explicit project exceptions still apply.
 
 

@@ -12,8 +12,12 @@ npm run dev
 ```
 
 Open the local URL printed by Vite (normally http://127.0.0.1:5173).
-Edit `src/App.tsx`. Backend configuration is optional while building the interface.
-Run `npm run check` for lint, type checking, build and configuration tests.
+Without backend configuration, Puls opens with fictional, browser-local demo data.
+For Supabase persistence, follow [Puls setup and architecture](docs/PULS.md), including
+the migration, seed and test-only access script. Merely adding the URL is not enough.
+Run `npm run check` for lint, type checking, build, calculation and SQL transaction tests.
+Run `npm run test:browser` for interactive Chromium checks (install with
+`npx playwright install chromium` once if needed).
 
 ## Local design system now
 
@@ -62,32 +66,30 @@ local tarball or the registry's latest release. `design-system:local` switches b
 1. Create or choose a development Supabase project.
 2. Copy `.env.example` to `.env.local`.
 3. Fill `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` from its Connect dialog.
-4. Restart Vite.
+4. Apply the schema, seed and test permissions described in [docs/PULS.md](docs/PULS.md).
+5. Restart Vite.
 
 Use the exported `supabase` client in `src/lib/supabase.ts` for application queries
 and authentication. It is `null` when configuration is missing or invalid; handle
-that case before querying. The UI says configured only, not connected: no live
-connection has been verified. This starter accepts `sb_publishable_` keys.
+that case before querying. This application accepts `sb_publishable_` keys.
 All `VITE_*` values enter the browser bundle. Never use a secret or service_role key.
 Enable Row Level Security and write appropriate policies before exposing any tables.
 
-No database schema or authentication flow has been assumed. Add versioned Supabase
-migrations when the Puls data model is defined. A hosted development project is
-the simplest start; a local Supabase stack requires the Supabase CLI and Docker.
+Versioned migrations live in `supabase/migrations/`; SSO is deferred. A hosted test
+project is the simplest start; a local Supabase stack requires the Supabase CLI and Docker.
 
 Reference: [Supabase React quickstart](https://supabase.com/docs/guides/getting-started/quickstarts/reactjs).
 
 ## Styling and guidance
 
-`src/main.tsx` imports package styles, then Hufvudstaden theme styles, then app CSS.
+`src/main.tsx` imports package styles, Hufvudstaden theme styles, bundled Cormorant Garamond font CSS, then app CSS.
 `index.html` sets `data-brand="hufvudstaden"` before rendering, including for portals.
 Tailwind 3 supplies app layout utilities with preflight disabled to preserve the
 library's base styles. Use library components for primitives and tokens for color.
 See the [Tailwind 3 Vite guide](https://v3.tailwindcss.com/docs/guides/vite).
 
 To change brands, change the theme import, HTML data-brand, guidance command and
-PROJECT.md together. Read the chosen brand's installed guidance first. Approved
-fonts/logos are application assets and have not been supplied with this starter.
+PROJECT.md together. Read the chosen brand's installed guidance first. Cormorant Garamond fonts and their OFL-1.1 license come from the package; no font copying or CDN is needed. The official black Hufvudstaden logo is imported from the package with its source provenance and brand usage terms.
 
 `npm run sync:guidance` refreshes managed documentation from the installed package.
 Local instructions outside managed blocks are preserved.

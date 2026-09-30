@@ -3,7 +3,9 @@ dist/
 .env
 .env.*
 !.env.example
+!.env.browser-test
 *.local
 test-results/
 playwright-report/
+.npm-cache/
 # Keep vendor/*.tgz tracked so npm ci works without the sibling repository.

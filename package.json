@@ -14,6 +14,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "seed:generate": "node --experimental-strip-types scripts/generate-seed.mjs",
     "check": "npm run lint && npm run build && npm test",
     "design-system:local": "node scripts/design-system.mjs local",
     "design-system:registry": "node scripts/design-system.mjs registry",
@@ -21,14 +23,17 @@
     "sync:guidance": "ds-guidance init --mode package --brand hufvudstaden --target ."
   },
   "dependencies": {
-    "@hufvudstaden/design-system": "file:vendor/hufvudstaden-design-system-0.16.0-576c4e98cbb5.tgz",
+    "@hufvudstaden/design-system": "file:vendor/hufvudstaden-design-system-0.17.1-76b5e3d439cd.tgz",
     "@supabase/supabase-js": "^2.0.0",
+    "date-fns": "^4.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "recharts": "^2.15.4"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
     "@eslint/js": "^9.39.0",
+    "@playwright/test": "^1.63.0",
     "@types/node": "^22.0.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",

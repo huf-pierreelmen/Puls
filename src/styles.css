@@ -1,0 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
+/* App layout only; component appearance comes from the design system. */
+.skip-link { position: absolute; left: 1rem; top: -5rem; padding: 0.75rem; background: var(--ds-surface); z-index: 100; }
+.skip-link:focus { top: 1rem; }
